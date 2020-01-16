@@ -8,13 +8,16 @@ setuptools.setup(
     version="0.0.1",
     author="Yang Liu",
     author_email="foamliu@yeah.net",
+    url="https://github.com/foamliu/FaceSDK",
+    packages=setuptools.find_packages(),
+    package_data={
+        'facesdk': ['model.pt'],
+        '': ['mobilenet0.25_Final.pth'],
+    },
     description="Face SDK",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/foamliu/FaceSDK",
-    packages=setuptools.find_packages(),
     platforms=["all"],
-    install_requires=['torch', 'torchvision', 'opencv-python'],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -27,9 +30,11 @@ setuptools.setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
+    keywords='face detection recognition',
     python_requires='>=3.5',
-    package_data={
-        'facesdk': ['model.pt'],
-        'retinaface': ['weights/mobilenet0.25_Final.pth'],
-    },
+    install_requires=[
+        'torch >= 1.0.0',
+        'torchvision',
+        'opencv-python'
+    ],
 )
