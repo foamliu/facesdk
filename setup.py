@@ -20,4 +20,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.5',
+    package_data={
+        'facesdk': ['model.pt'],
+        'weights': ['mobilenet0.25_Final.pth'],
+    },
 )
