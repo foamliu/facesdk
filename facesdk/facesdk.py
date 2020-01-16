@@ -85,4 +85,4 @@ class FaceSDK(object):
                     break
             face_ids.append(face_id)
 
-        return face_ids
+        return bboxes, face_ids
