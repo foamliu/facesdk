@@ -1,6 +1,6 @@
 import cv2 as cv
 
-from facesdk.facesdk import FaceSDK
+from facesdk.core import FaceSDK
 
 
 def draw_bboxes(img, bboxes, landmarks):
