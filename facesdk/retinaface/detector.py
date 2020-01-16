@@ -4,11 +4,11 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 
-from retinaface.data import cfg_mnet
-from retinaface.layers.functions.prior_box import PriorBox
-from retinaface.loader import load_model
-from retinaface.utils.box_utils import decode, decode_landm
-from retinaface.utils.nms.py_cpu_nms import py_cpu_nms
+from facesdk.retinaface.data import cfg_mnet
+from facesdk.retinaface.layers import PriorBox
+from facesdk.retinaface.loader import load_model
+from facesdk.retinaface.utils.box_utils import decode, decode_landm
+from facesdk.retinaface.utils.nms.py_cpu_nms import py_cpu_nms
 
 cudnn.benchmark = True
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

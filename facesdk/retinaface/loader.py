@@ -2,8 +2,8 @@ from __future__ import print_function
 
 import torch
 
-from retinaface.data import cfg_mnet
-from retinaface.models.retinaface import RetinaFace
+from facesdk.retinaface.data import cfg_mnet
+from facesdk.retinaface.models.retinaface import RetinaFace
 
 
 def check_keys(model, pretrained_state_dict):

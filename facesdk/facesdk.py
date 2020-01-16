@@ -5,9 +5,9 @@ import numpy as np
 import torch
 from torchvision import transforms
 
-from align_faces import get_reference_facial_points, warp_and_crop_face
-from mobilefacenet import MobileFaceNet
-from retinaface.detector import detect_faces
+from facesdk.align_faces import get_reference_facial_points, warp_and_crop_face
+from facesdk.mobilefacenet import MobileFaceNet
+from facesdk.retinaface.detector import detect_faces
 
 im_size = 112
 threshold = 74.27610703463543
