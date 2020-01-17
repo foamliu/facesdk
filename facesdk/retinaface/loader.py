@@ -39,7 +39,6 @@ def load_model():
     # device = torch.cuda.current_device()
     # pretrained_dict = torch.load(pretrained_path, map_location=lambda storage, loc: storage.cuda(device))
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     pretrained_dict = torch.load(pretrained_path, map_location=lambda storage, location: 'cpu')
 
     if "state_dict" in pretrained_dict.keys():

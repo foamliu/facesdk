@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="facesdk",
-    version="0.0.5",
+    version="0.0.6",
     author="Yang Liu",
     author_email="foamliu@yeah.net",
     url="https://github.com/foamliu/FaceSDK",
