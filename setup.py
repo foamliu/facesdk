@@ -4,15 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="facesdk",  # Replace with your own username
-    version="0.0.4",
+    name="facesdk",
+    version="0.0.5",
     author="Yang Liu",
     author_email="foamliu@yeah.net",
     url="https://github.com/foamliu/FaceSDK",
     packages=setuptools.find_packages(),
     package_data={
-        'facesdk': ['model.pt'],
-        '': ['mobilenet0.25_Final.pth'],
+        'facesdk': ['model.pt', 'retinaface/weights/mobilenet0.25_Final.pth'],
     },
     description="Face SDK",
     long_description=long_description,

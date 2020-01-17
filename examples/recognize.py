@@ -1,6 +1,6 @@
 import cv2 as cv
 
-from facesdk import FaceSDK
+from facesdk.core import FaceSDK
 
 
 def draw_bboxes(img, bboxes, face_ids):
@@ -20,23 +20,26 @@ def draw_bboxes(img, bboxes, face_ids):
     return img
 
 
+def register(facesdk, name):
+    print('Face registration for {}...'.format(name))
+    facesdk.register('examples/data/{0}.jpg'.format(name), name)
+
+
 if __name__ == "__main__":
-    img = cv.imread('examples/data/aqgy.jpg')
+    filename = 'examples/data/aqgy.jpg'
+    img = cv.imread(filename)
+    persons = ['chenmeijia', 'guangu', 'huyifei', 'linwanyu', 'luzhanbo', 'lvziqiao', 'tangyouyou', 'zengxiaoxian',
+               'zhangwei']
 
     facesdk = FaceSDK()
+    for name in persons:
+        register(facesdk, name)
 
-    facesdk.register('examples/data/chenmeijia.jpg', 'chenmeijia')
-    facesdk.register('examples/data/guangu.jpg', 'guangu')
-    facesdk.register('examples/data/huyifei.jpg', 'huyifei')
-    facesdk.register('examples/data/linwanyu.jpg', 'linwanyu')
-    facesdk.register('examples/data/luzhanbo.jpg', 'luzhanbo')
-    facesdk.register('examples/data/lvziqiao.jpg', 'lvziqiao')
-    facesdk.register('examples/data/tangyouyou.jpg', 'tangyouyou')
-    facesdk.register('examples/data/zengxiaoxian.jpg', 'zengxiaoxian')
-    facesdk.register('examples/data/zhangwei.jpg', 'zhangwei')
-
+    print('Face recognition for {}...'.format(filename))
     bboxes, face_ids = facesdk.recognize(img)
 
     img = draw_bboxes(img, bboxes, face_ids)
-    cv.imshow('face recognition', img)
+    cv.imshow('Face recognition', img)
     cv.waitKey(0)
+
+    cv.imwrite('examples/output/face_recognition.jpg', img)

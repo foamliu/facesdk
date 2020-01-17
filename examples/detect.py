@@ -37,3 +37,5 @@ if __name__ == "__main__":
     img = draw_bboxes(img, bboxes, landmarks)
     cv.imshow('face detection', img)
     cv.waitKey(0)
+
+    cv.imwrite('examples/output/face_detection.jpg', img)
