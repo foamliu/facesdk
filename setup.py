@@ -41,6 +41,7 @@ setuptools.setup(
     install_requires=[
         'torch >= 1.0.0',
         'torchvision',
-        'opencv-python'
+        'opencv-python',
+        'scikit-image'
     ],
 )
