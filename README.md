@@ -19,10 +19,18 @@ If all went well, you should be able to execute the demo scripts under `examples
 Examples
 --------
 
+Run face detection demo:
+
 ```
 python examples/detect.py
 ```
 
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_detection.jpg)
+
+Run face recognition demo:
+
 ```
 python examples/recognize.py
 ```
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recognition.jpg)
