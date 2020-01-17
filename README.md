@@ -34,3 +34,15 @@ python examples/recognize.py
 ```
 
 ![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recognition.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_1.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_2.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_3.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_4.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_5.jpg)
+
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_6.jpg)

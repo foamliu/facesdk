@@ -25,9 +25,16 @@ def register(facesdk, name):
     facesdk.register('examples/data/{0}.jpg'.format(name), name)
 
 
-if __name__ == "__main__":
-    filename = 'examples/data/aqgy.jpg'
+def recognize(facesdk, idx):
+    filename = 'examples/data/aqgy_{}.jpg'.format(idx)
+    print('Face recognition for {}...'.format(filename))
     img = cv.imread(filename)
+    bboxes, face_ids = facesdk.recognize(img)
+    img = draw_bboxes(img, bboxes, face_ids)
+    cv.imwrite('examples/output/face_recog_{}.jpg'.format(idx), img)
+
+
+if __name__ == "__main__":
     persons = ['chenmeijia', 'guangu', 'huyifei', 'linwanyu', 'luzhanbo', 'lvziqiao', 'tangyouyou', 'zengxiaoxian',
                'zhangwei']
 
@@ -35,11 +42,5 @@ if __name__ == "__main__":
     for name in persons:
         register(facesdk, name)
 
-    print('Face recognition for {}...'.format(filename))
-    bboxes, face_ids = facesdk.recognize(img)
-
-    img = draw_bboxes(img, bboxes, face_ids)
-    cv.imshow('Face recognition', img)
-    cv.waitKey(0)
-
-    cv.imwrite('examples/output/face_recognition.jpg', img)
+    for i in [1, 2, 3, 4, 5, 6]:
+        recognize(facesdk, i)
