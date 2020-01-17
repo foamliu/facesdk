@@ -36,8 +36,12 @@ def load_model():
     # print('Loading pretrained model from {}'.format(pretrained_path))
     model = RetinaFace(cfg=cfg_mnet, phase='test')
 
-    device = torch.cuda.current_device()
-    pretrained_dict = torch.load(pretrained_path, map_location=lambda storage, loc: storage.cuda(device))
+    # device = torch.cuda.current_device()
+    # pretrained_dict = torch.load(pretrained_path, map_location=lambda storage, loc: storage.cuda(device))
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    pretrained_dict = torch.load(pretrained_path, map_location=lambda storage, location: 'cpu')
+
     if "state_dict" in pretrained_dict.keys():
         pretrained_dict = remove_prefix(pretrained_dict['state_dict'], 'module.')
     else:
