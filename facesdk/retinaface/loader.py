@@ -1,5 +1,8 @@
 from __future__ import print_function
 
+import os
+import pathlib
+
 import torch
 
 from facesdk.retinaface.data import cfg_mnet
@@ -27,7 +30,8 @@ def remove_prefix(state_dict, prefix):
 
 
 def load_model():
-    pretrained_path = 'retinaface/weights/mobilenet0.25_Final.pth'
+    retinaface_folder = pathlib.Path(__file__).parent.absolute()
+    pretrained_path = os.path.join(retinaface_folder, 'weights/mobilenet0.25_Final.pth')
     # print('Loading pretrained model from {}'.format(pretrained_path))
     model = RetinaFace(cfg=cfg_mnet, phase='test')
 
