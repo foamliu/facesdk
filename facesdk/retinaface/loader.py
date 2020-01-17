@@ -30,7 +30,7 @@ def remove_prefix(state_dict, prefix):
 
 
 def load_model():
-    retinaface_folder = pathlib.Path(__file__).parent.absolute()
+    retinaface_folder = str(pathlib.Path(__file__).parent.absolute())
     weights_folder = os.path.join(retinaface_folder, 'weights')
     pretrained_path = os.path.join(weights_folder, 'mobilenet0.25_Final.pth')
     # print('Loading pretrained model from {}'.format(pretrained_path))
