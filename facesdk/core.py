@@ -41,9 +41,9 @@ def align_face(img, facial5points):
 class FaceSDK(object):
     def __init__(self):
         self.model = MobileFaceNet()
-        facesdk_folder = pathlib.Path(__file__).parent.absolute()
+        facesdk_folder = str(pathlib.Path(__file__).parent.absolute())
         model_path = os.path.join(facesdk_folder, 'model.pt')
-        self.model.load_state_dict(torch.load(model_path))
+        self.model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
         self.model.eval()
         self.features = []
 
