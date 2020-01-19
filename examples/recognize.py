@@ -35,12 +35,12 @@ def recognize(facesdk, idx):
 
 
 if __name__ == "__main__":
-    persons = ['chenmeijia', 'guangu', 'huyifei', 'linwanyu', 'luzhanbo', 'lvziqiao', 'tangyouyou', 'zengxiaoxian',
+    persons = ['chenmeijia', 'guangu', 'huyifei', 'linwanyu', 'lvziqiao', 'luzhanbo', 'tangyouyou', 'zengxiaoxian',
                'zhangwei']
 
     facesdk = FaceSDK()
     for name in persons:
         register(facesdk, name)
 
-    for i in [1, 2, 3, 4, 5, 6]:
+    for i in range(7):
         recognize(facesdk, i)

@@ -33,7 +33,7 @@ Run face recognition demo:
 python examples/recognize.py
 ```
 
-![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recognition.jpg)
+![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_0.jpg)
 
 ![image](https://github.com/foamliu/facesdk/raw/master/examples/output/face_recog_1.jpg)
 

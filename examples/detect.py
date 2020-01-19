@@ -29,7 +29,7 @@ def draw_bboxes(img, bboxes, landmarks):
 
 
 if __name__ == "__main__":
-    img = cv.imread('examples/data/aqgy.jpg')
+    img = cv.imread('examples/data/aqgy_0.jpg')
 
     facesdk = FaceSDK()
     bboxes, landmarks = facesdk.detect_faces(img)
